@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_item"
+    android:layout_width="300dp"
+    android:layout_height="match_parent"
+    android:layout_marginEnd="30dp">
+
+    <ImageView
+        android:id="@+id/iv_img"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="唐门六道"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/iv_img"
+        app:layout_constraintTop_toBottomOf="@id/iv_img" />
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="12dp"
+        android:ellipsize="end"
+        android:lines="1"
+        android:text="小仙女邀你一起畅游仙侠新世界"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toStartOf="@id/tv_start"
+        app:layout_constraintStart_toStartOf="@id/iv_img"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <TextView
+        android:id="@+id/tv_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:text="开始游戏"
+        android:textColor="#fea503"
+        android:textSize="12sp"
+        app:bl_corners_radius="4dp"
+        app:bl_stroke_color="#fea503"
+        app:bl_stroke_width="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_img" />
+</androidx.constraintlayout.widget.ConstraintLayout>

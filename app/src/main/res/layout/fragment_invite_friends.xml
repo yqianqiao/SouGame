@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            tools:context=".ui.fragment.invitefriends.InviteFriendsFragment">
+
+            <com.example.sougame.app.weight.CustomTitleBar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/white"
+                app:title="邀请好友详情" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:text="可兑换金额(元)" />
+
+            <TextView
+                android:id="@+id/tv_out"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/color_yellow"
+                android:textSize="20sp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_invite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="0"
+                    android:textColor="@color/color_title"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toStartOf="@id/tv_text"
+                    app:layout_constraintStart_toStartOf="@id/tv_text2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="人"
+                    android:textColor="@color/color_title"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tv_invite"
+                    app:layout_constraintEnd_toEndOf="@id/tv_text2"
+                    app:layout_constraintStart_toEndOf="@id/tv_invite" />
+
+                <TextView
+                    android:id="@+id/tv_text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="已邀请"
+                    android:textColor="@color/color_title"
+                    app:layout_constraintEnd_toEndOf="@id/tv_text"
+                    app:layout_constraintEnd_toStartOf="@id/text3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_invite" />
+
+                <TextView
+                    android:id="@+id/tv_reward"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/color_title"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toStartOf="@id/tv_text1"
+                    app:layout_constraintStart_toStartOf="@id/text3"
+                    app:layout_constraintTop_toTopOf="@id/tv_invite" />
+
+                <TextView
+                    android:id="@+id/tv_text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="人"
+                    android:textColor="@color/color_title"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tv_reward"
+                    app:layout_constraintEnd_toEndOf="@id/text3"
+                    app:layout_constraintStart_toEndOf="@id/tv_reward" />
+
+                <TextView
+                    android:id="@+id/text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="已奖励"
+                    android:textColor="@color/color_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tv_text2"
+                    app:layout_constraintTop_toBottomOf="@id/tv_reward" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                drawable_radius="@{50}"
+                drawable_solidColor="@{@color/color_yellow}"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="30dp"
+                android:gravity="center"
+                android:text="可兑换0元现金 继续邀请好友"
+                android:textColor="@color/white" />
+
+            <LinearLayout
+                drawable_radius="@{50}"
+                drawable_strokeColor="@{@color/color_yellow}"
+                drawable_strokeWidth="@{1}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="30dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_url"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/tv_copy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:text="复制"
+                    android:textColor="@color/color_yellow" />
+            </LinearLayout>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_Layout"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginTop="12dp"
+                app:tabIndicatorColor="@color/color_yellow"
+                app:tabIndicatorFullWidth="false"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="@color/color_yellow"
+                app:tabTextColor="@color/color_title" />
+
+            <include
+                android:id="@+id/layout_withdraw"
+                layout="@layout/layout_withdraw" />
+
+            <include
+                android:id="@+id/layout_invite_friends"
+                layout="@layout/layout_invite_friends"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/layout_invite_rule"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="12dp"
+                android:text="1.通过“邀请好友”或分享[搜游记]链接至好友，好友进入平台注册账号，并通过实名认证后，则判定[邀请好友]成功。\n
+2.被邀请的好友，在[搜游记]任意一款游戏充值，邀请者均可获得被邀请者每笔充值最高10%的奖励(奖励金额可红包提现到账)。\n
+3. 邀请的好友的总数无上限，但是好友邀请的玩家的充值不计入奖励统计。\n
+4.为回馈您的好友参与，被邀请的好友首次参与积分转盘抽奖，平台100%增送实物奖励。"
+                android:visibility="gone" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

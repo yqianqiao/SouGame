@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="click"
+            type="com.example.sougame.ui.fragment.my.MyFragment.ProxyClick" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/layout_not_login"
+            layout="@layout/layout_not_login"
+            app:click="@{click}" />
+
+        <include
+            android:id="@+id/layout_user_info"
+            layout="@layout/layout_user_info"
+
+            android:visibility="gone"
+            app:click="@{click}" />
+
+        <LinearLayout
+            android:id="@+id/tv_sign"
+
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center_vertical"
+            android:onClick="@{()->click.sign()}">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:text="签到" />
+
+            <TextView
+                android:id="@+id/tv_integral"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:drawableEnd="@drawable/ic_right_arrow"
+                android:drawablePadding="12dp"
+                android:text="0积分" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:drawableEnd="@drawable/ic_right_arrow"
+            android:gravity="center_vertical"
+            android:onClick="@{()->click.personalCenter()}"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="个人中心" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:drawableEnd="@drawable/ic_right_arrow"
+            android:gravity="center_vertical"
+            android:onClick="@{()->click.security()}"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="账户安全" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:drawableEnd="@drawable/ic_right_arrow"
+            android:gravity="center_vertical"
+            android:onClick="@{()->click.rechargeRecord()}"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="充值/积分记录" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:drawableEnd="@drawable/ic_right_arrow"
+            android:gravity="center_vertical"
+            android:onClick="@{()->click.customerService()}"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="联系客服" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:drawableEnd="@drawable/ic_right_arrow"
+            android:gravity="center_vertical"
+            android:onClick="@{()->click.checkUpdate()}"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="检查更新" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:drawableEnd="@drawable/ic_right_arrow"
+            android:gravity="center_vertical"
+            android:onClick="@{()->click.switchAccount()}"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="切换账号" />
+
+        <TextView
+            android:id="@+id/tv_login"
+            drawable_radius="@{100}"
+            drawable_solidColor="@{@color/color_yellow}"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="30dp"
+            android:gravity="center"
+            android:onClick="@{()->click.login()}"
+            android:text="登录"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</layout>

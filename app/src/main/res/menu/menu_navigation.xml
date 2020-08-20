@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_home"
+        android:checked="true"
+        android:icon="@drawable/ic_sy"
+        android:title="@string/home" />
+
+    <item
+        android:id="@+id/menu_game_pack"
+        android:icon="@drawable/ic_home_lb"
+        android:title="@string/gamePack" />
+
+    <item
+        android:id="@+id/menu_integral_mall"
+        android:icon="@drawable/ic_sc_1"
+        android:title="@string/integral_mall" />
+    <item
+        android:id="@+id/menu_my"
+        android:icon="@drawable/ic_my"
+        android:title="@string/my" />
+
+
+</menu>

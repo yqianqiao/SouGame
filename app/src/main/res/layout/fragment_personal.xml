@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="click"
+            type="com.example.sougame.ui.fragment.my.PersonalFragment.ProxyClick" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.fragment.my.PersonalFragment">
+
+        <include layout="@layout/layout_title" />
+
+        <TextView
+            android:id="@+id/tv_text"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:drawableEnd="@drawable/ic_right_arrow"
+            android:gravity="center_vertical"
+            android:onClick="@{()->click.myGiftBag()}"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="我的礼包" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center_vertical"
+            android:onClick="@{()->click.myCard()}">
+
+            <TextView
+                android:id="@+id/tv_text1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:text="我的礼包" />
+
+            <TextView
+                android:id="@+id/tv_text1_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:drawableEnd="@drawable/ic_right_arrow"
+                android:drawablePadding="12dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_3"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center_vertical"
+            android:onClick="@{()->click.myPlayed()}">
+
+            <TextView
+                android:id="@+id/tv_text2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:text="我玩过的" />
+
+            <TextView
+                android:id="@+id/tv_text2_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:drawableEnd="@drawable/ic_right_arrow"
+                android:drawablePadding="12dp" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="gameInfo"
+            type="com.example.sougame.data.model.bean.GameListBean" />
+
+        <variable
+            name="util"
+            type="com.example.sougame.app.ext.UtilsKt" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp">
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="@{gameInfo.subject}"
+            app:layout_constraintStart_toEndOf="@id/iv_icon"
+            app:layout_constraintTop_toTopOf="@id/iv_icon"
+            tools:text="斩月屠龙" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:gravity="center_vertical"
+            app:layout_constraintBottom_toBottomOf="@id/tv_title"
+            app:layout_constraintStart_toEndOf="@id/tv_title"
+            app:layout_constraintTop_toTopOf="@id/tv_title">
+
+            <TextView
+                android:id="@+id/tv_tag_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:paddingStart="4dp"
+                android:paddingTop="1dp"
+                android:paddingEnd="4dp"
+                android:paddingBottom="1dp"
+                android:textColor="@color/color_orange"
+                android:textSize="10sp"
+                android:visibility="gone"
+                app:bl_corners_radius="2dp"
+                app:bl_stroke_color="@color/color_orange"
+                app:bl_stroke_width="1dp"
+                tools:text="热血" />
+
+            <TextView
+                android:id="@+id/tv_tag_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:paddingStart="4dp"
+                android:paddingTop="1dp"
+                android:paddingEnd="4dp"
+                android:paddingBottom="1dp"
+                android:textColor="@color/color_yellow"
+                android:textSize="10sp"
+                android:visibility="gone"
+                app:bl_corners_radius="2dp"
+                app:bl_stroke_color="@color/color_yellow"
+                app:bl_stroke_width="1dp"
+                tools:text="热血" />
+
+            <TextView
+                android:id="@+id/tv_tag_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:paddingStart="4dp"
+                android:paddingTop="1dp"
+                android:paddingEnd="4dp"
+                android:paddingBottom="1dp"
+                android:textColor="@color/color_easy_blue"
+                android:textSize="10sp"
+                android:visibility="gone"
+                app:bl_corners_radius="2dp"
+                app:bl_stroke_color="@color/color_easy_blue"
+                app:bl_stroke_width="1dp"
+                tools:text="热血" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_grade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_easy_red"
+            android:textSize="12sp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="小编评分：10分" />
+
+        <TextView
+            android:id="@+id/tv_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="开始游戏"
+            android:textColor="@color/color_yellow"
+            app:bl_corners_radius="4dp"
+            app:bl_stroke_color="@color/color_yellow"
+            app:bl_stroke_width="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="@{gameInfo.description}"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+        <TextView
+            android:id="@+id/tv_play_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_info" />
+
+        <!--    <View-->
+        <!--        android:id="@+id/view_"-->
+        <!--        android:layout_width="0dp"-->
+        <!--        android:layout_height="0dp"-->
+        <!--        app:layout_constraintBottom_toBottomOf="@id/tv_play_num"-->
+        <!--        app:layout_constraintEnd_toEndOf="@id/tv_info"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:layout_constraintTop_toTopOf="parent" />-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

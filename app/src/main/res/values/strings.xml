@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">SouGame</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="home">首页</string>
+    <string name="gamePack">游戏礼包</string>
+    <string name="integral_mall">积分商城</string>
+    <string name="my">我</string>
+    <string name="start"><![CDATA[>> 开始游戏 <<]]></string>
+    <string name="play_num">人关注</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="copy"><u>复制礼包</u></string>
+</resources>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="click"
+            type="com.example.sougame.ui.fragment.my.MyFragment.ProxyClick" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:text="tksk"
+            android:textColor="@color/color_title"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_vip_info"
+            drawable_radius="@{50}"
+            drawable_solidColor="@{0xff3e3e3e}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:drawableStart="@drawable/ic_vip_1"
+            android:drawableEnd="@drawable/ic_vip_2"
+            android:onClick="@{()->click.vipInfo()}"
+            android:padding="2dp"
+            android:text="VIP0了解更多"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@id/tv_user_name"
+            app:layout_constraintTop_toTopOf="@id/tv_user_name" />
+
+
+        <TextView
+            android:id="@+id/tv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="账号：130558785685"
+            app:layout_constraintStart_toStartOf="@id/tv_user_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_vip_info" />
+
+        <TextView
+            android:id="@+id/tv_uid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="UID:170704"
+            app:layout_constraintStart_toEndOf="@id/tv_phone"
+            app:layout_constraintTop_toTopOf="@id/tv_phone" />
+
+        <ProgressBar
+            android:id="@+id/pb_progress"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="0dp"
+            android:layout_height="6dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="50dp"
+            android:max="100"
+            android:progress="70"
+            app:layout_constraintEnd_toStartOf="@id/iv_avatar"
+            app:layout_constraintStart_toStartOf="@id/tv_user_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_phone" />
+
+        <TextView
+            android:id="@+id/tv_nextLevel_pay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12dp"
+            android:drawableStart="@drawable/ic_vip_1"
+            android:drawableEnd="@drawable/ic_vip_1"
+            android:gravity="center"
+            android:text="您还需要充值50RMB"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@id/pb_progress"
+            app:layout_constraintStart_toStartOf="@id/pb_progress"
+            app:layout_constraintTop_toBottomOf="@id/pb_progress" />
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/ic_default"
+            app:layout_constraintBottom_toBottomOf="@id/tv_nextLevel_pay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_user_name" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintEnd_toEndOf="@id/iv_avatar"
+            app:layout_constraintStart_toStartOf="@id/tv_user_name"
+            app:layout_constraintTop_toBottomOf="@id/iv_avatar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_invite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="0"
+                    android:textColor="@color/color_yellow"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="人"
+                    android:textColor="@color/color_title"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tv_invite"
+                    app:layout_constraintStart_toEndOf="@id/tv_invite" />
+
+                <TextView
+                    android:id="@+id/tv_text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="已邀请"
+                    android:textColor="@color/color_title"
+                    app:layout_constraintEnd_toEndOf="@id/tv_text"
+                    app:layout_constraintStart_toStartOf="@id/tv_invite"
+                    app:layout_constraintTop_toBottomOf="@id/tv_invite" />
+
+                <TextView
+                    android:id="@+id/tv_reward"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:text="0"
+                    android:textColor="@color/color_yellow"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@id/tv_text"
+                    app:layout_constraintTop_toTopOf="@id/tv_invite" />
+
+                <TextView
+                    android:id="@+id/tv_text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="人"
+                    android:textColor="@color/color_title"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tv_reward"
+                    app:layout_constraintStart_toEndOf="@id/tv_reward" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="已邀请"
+                    android:textColor="@color/color_title"
+                    app:layout_constraintEnd_toEndOf="@id/tv_text1"
+                    app:layout_constraintStart_toStartOf="@id/tv_reward"
+                    app:layout_constraintTop_toBottomOf="@id/tv_reward" />
+
+                <TextView
+                    android:id="@+id/tv_invite_friends"
+                    drawable_radius="@{50}"
+                    drawable_solidColor="@{@color/color_yellow}"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="12dp"
+                    android:gravity="center"
+                    android:onClick="@{()->click.inviteFriends()}"
+                    android:text="邀请好友"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_text2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_invite" />
+
+                <TextView
+                    drawable_radius="@{50}"
+                    drawable_strokeColor="@{@color/color_yellow}"
+                    drawable_strokeWidth="@{1}"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="20dp"
+                    android:gravity="center"
+                    android:onClick="@{()->click.withdraw()}"
+                    android:text="提现"
+                    android:textColor="@color/color_yellow"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_text2"
+                    app:layout_constraintEnd_toStartOf="@id/tv_invite_friends"
+                    app:layout_constraintTop_toTopOf="@id/tv_invite" />
+
+                <LinearLayout
+                    android:id="@+id/tv_toFriend"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:onClick="@{()->click.moder()}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tv_text2"
+                    app:layout_constraintTop_toBottomOf="@id/tv_text2">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="点击查看更多"
+                        android:textColor="@color/color_title" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="赚钱攻略"
+                        android:textColor="@color/color_easy_red" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="了解更多 >" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

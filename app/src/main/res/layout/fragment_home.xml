@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.home.HomeFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_search"
+                drawable_radius="@{5}"
+                drawable_solidColor="@{@color/color_ef}"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_margin="12dp"
+                android:gravity="center_vertical"
+                android:paddingStart="12dp"
+                android:text="请输入想玩的游戏名称（如：传奇来了）"
+                android:textColor="@color/textColorPrimary" />
+
+            <TextView
+                android:id="@+id/tv_notice"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/color_notice"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center_vertical"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:paddingStart="12dp"
+                android:singleLine="true"
+                android:text="公告：玩游戏，领红包！更多精彩福利点击查看                                        "
+                android:textColor="@color/color_yellow"
+                android:textSize="12sp"
+                tools:ignore="RtlSymmetry" />
+
+            <com.youth.banner.Banner
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:indicator_height="10dp"
+                app:indicator_margin="4dp"
+                app:indicator_normal_width="10dp"
+                app:indicator_selected_width="10dp" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                app:tabIndicatorColor="#fea503"
+                app:tabIndicatorFullWidth="false"
+                app:tabSelectedTextColor="#fea503"
+                app:tabTextColor="#C5C4C4" />
+
+            <FrameLayout
+                android:id="@+id/fl_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

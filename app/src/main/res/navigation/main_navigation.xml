@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/main_fragment">
+
+    <fragment
+        android:id="@+id/main_fragment"
+        android:name="com.example.sougame.ui.fragment.MainFragment"
+        android:label="HomeFragment">
+
+        <!--        <action-->
+        <!--            android:id="@+id/action_main_fragment_to_homeFragment"-->
+        <!--            app:destination="@id/homeFragment" />-->
+
+
+        <action
+            android:id="@+id/action_main_fragment_to_searchFragment"
+            app:destination="@id/searchFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/main_fragment" />
+        <action
+            android:id="@+id/action_main_fragment_to_gameDetailsFragment"
+            app:destination="@id/gameDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/main_fragment" />
+        <action
+            android:id="@+id/action_main_fragment_to_webFragment"
+            app:destination="@id/webFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/main_fragment" />
+        <action
+            android:id="@+id/action_main_fragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_main_fragment_to_personalFragment"
+            app:destination="@id/personalFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/main_fragment" />
+        <action
+            android:id="@+id/action_main_fragment_to_inviteFriendsFragment"
+            app:destination="@id/inviteFriendsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/main_fragment" />
+        <action
+            android:id="@+id/action_main_fragment_to_vipFragment"
+            app:destination="@id/vipFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/main_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.sougame.ui.fragment.home.SearchFragment"
+        android:label="SearchFragment">
+        <action
+            android:id="@+id/action_searchFragment_to_webFragment"
+            app:destination="@id/webFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/searchFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_gameDetailsFragment"
+            app:destination="@id/gameDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/searchFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/webFragment"
+        android:name="com.example.sougame.ui.fragment.web.WebFragment"
+        android:label="WebFragment">
+        <action
+            android:id="@+id/action_webFragment_to_broadsideFragment"
+            app:destination="@id/broadsideFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/webFragment" />
+        <action
+            android:id="@+id/action_webFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/main_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameDetailsFragment"
+        android:name="com.example.sougame.ui.fragment.gamedetails.GameDetailsFragment"
+        android:label="GameDetailsFragment">
+        <action
+            android:id="@+id/action_gameDetailsFragment_to_webFragment"
+            app:destination="@id/webFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/gameDetailsFragment" />
+        <action
+            android:id="@+id/action_gameDetailsFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/gameDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.sougame.ui.fragment.login.LoginFragment"
+        android:label="LoginFragment">
+        <action
+            android:id="@+id/action_loginFragment_to_webFragment"
+            app:destination="@id/webFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/main_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.sougame.ui.fragment.recyclerview.ListFragment"
+        android:label="ListFragment">
+        <action
+            android:id="@+id/action_listFragment_to_gameDetailsFragment"
+            app:destination="@id/gameDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/listFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_webFragment"
+            app:destination="@id/webFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/personalFragment"
+        android:name="com.example.sougame.ui.fragment.my.PersonalFragment"
+        android:label="PersonalFragment">
+        <action
+            android:id="@+id/action_personalFragment_to_listFragment"
+            app:destination="@id/listFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/personalFragment" />
+        <action
+            android:id="@+id/action_personalFragment_to_modifyInfoFragment"
+            app:destination="@id/modifyInfoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/personalFragment" />
+        <action
+            android:id="@+id/action_personalFragment_to_tabListFragment"
+            app:destination="@id/tabListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/personalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/modifyInfoFragment"
+        android:name="com.example.sougame.ui.fragment.my.ModifyInfoFragment"
+        android:label="ModifyInfoFragment" />
+    <fragment
+        android:id="@+id/tabListFragment"
+        android:name="com.example.sougame.ui.fragment.tabrecyclerview.TabListFragment"
+        android:label="TabListFragment" />
+    <fragment
+        android:id="@+id/inviteFriendsFragment"
+        android:name="com.example.sougame.ui.fragment.invitefriends.InviteFriendsFragment"
+        android:label="InviteFriendsFragment" />
+    <fragment
+        android:id="@+id/vipFragment"
+        android:name="com.example.sougame.ui.fragment.my.vip.VipFragment"
+        android:label="VipFragment" />
+    <fragment
+        android:id="@+id/broadsideFragment"
+        android:name="com.example.sougame.ui.fragment.web.BroadsideFragment"
+        android:label="BroadsideFragment">
+        <action
+            android:id="@+id/action_broadsideFragment_to_main_fragment"
+            app:destination="@id/main_fragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_broadsideFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/broadsideFragment" />
+    </fragment>
+</navigation>

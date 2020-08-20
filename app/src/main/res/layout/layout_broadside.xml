@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="click"
+            type="com.example.sougame.ui.fragment.web.BroadsideFragment.ProxyClick" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_page"
+            drawable_checkable_radius="@{50}"
+            drawable_solidColor="@{@color/color_b5}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:drawableStart="@drawable/ic_back"
+            android:drawablePadding="12dp"
+            android:onClick="@{()->click.backPage()}"
+            android:paddingStart="12dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="4dp"
+            android:text="首页"
+            android:textColor="@color/color_title"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_bind_phone"
+            drawable_checkable_radius="@{50}"
+            drawable_solidColor="@{@color/color_b5}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:onClick="@{()->click.bindPhone()}"
+            android:paddingStart="8dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="4dp"
+            android:text="绑定手机"
+            android:textColor="@color/color_title"
+            android:textSize="12sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_page"
+            app:layout_constraintEnd_toStartOf="@id/tv_share" />
+
+        <TextView
+            android:id="@+id/tv_share"
+            drawable_checkable_radius="@{50}"
+            drawable_solidColor="@{@color/color_b5}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:onClick="@{()->click.share()}"
+            android:paddingStart="8dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="4dp"
+            android:text="分享游戏"
+            android:textColor="@color/color_title"
+            android:textSize="12sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_page"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_page" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/tv_uid"
+            app:layout_constraintStart_toEndOf="@id/iv_avatar"
+            app:layout_constraintTop_toTopOf="@id/iv_avatar"
+            tools:text="sdfs" />
+
+        <TextView
+            android:id="@+id/tv_uid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_avatar"
+            app:layout_constraintStart_toStartOf="@id/tv_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_name"
+            tools:text="5454" />
+
+        <TextView
+            android:id="@+id/tv_vip_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_name"
+            app:layout_constraintStart_toEndOf="@id/tv_name" />
+
+        <TextView
+            android:id="@+id/tv_sign"
+            drawable_radius="@{4}"
+            drawable_strokeColor="@{@color/color_yellow}"
+            drawable_strokeWidth="@{1}"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="12dp"
+            android:gravity="center"
+            android:onClick="@{()->click.sign()}"
+            android:text="签到"
+            android:textColor="@color/color_yellow"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_avatar" />
+
+        <TextView
+            drawable_radius="@{4}"
+            drawable_strokeColor="@{@color/color_easy_blue}"
+            drawable_strokeWidth="@{1}"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="12dp"
+            android:gravity="center"
+            android:onClick="@{()->click.switchAccount()}"
+            android:text="切换账号"
+            android:textColor="@color/color_easy_blue"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_avatar"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <RadioGroup
+            android:id="@+id/rg_type"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@id/iv_avatar"
+            app:layout_constraintTop_toBottomOf="@id/iv_avatar">
+
+            <RadioButton
+                android:id="@+id/rb_1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center"
+                android:text="VIP抽奖"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/rb_2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/ic_zx"
+                android:gravity="center"
+                android:paddingTop="8dp"
+                android:text="资讯"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/rb_3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/ic_lb"
+                android:gravity="center"
+                android:paddingTop="8dp"
+                android:text="礼包"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/rb_4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/ic_rw"
+                android:gravity="center"
+                android:paddingTop="8dp"
+                android:text="每日任务"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/rb_5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/ic_gd"
+                android:gravity="center"
+                android:paddingTop="8dp"
+                android:text="更多游戏"
+                android:textSize="12sp" />
+        </RadioGroup>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_broadside"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rg_type" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

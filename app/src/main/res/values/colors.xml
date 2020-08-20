@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/color_yellow</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorSimplebarText">@color/textColorPrimary</color>
+
+    <color name="color_ef">#efefef</color>
+    <color name="color_title">#333333</color>
+    <color name="color_yellow">#fea509</color>
+    <color name="color_7b">#7b7b7b</color>
+    <color name="color_b5">#b5b5b5</color>
+    <color name="color_orange">#f94437</color>
+    <color name="color_easy_blue">#899bff</color>
+    <color name="color_notice">#fdfde4</color>
+    <color name="color_easy_red">#e93f33</color>
+    <color name="color_title_blue">#3687ff</color>
+    <color name="color_vip">#d5b591</color>
+</resources>

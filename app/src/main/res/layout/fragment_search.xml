@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="searchTypeBean"
+            type="com.example.sougame.data.model.bean.SearchTypeBean" />
+
+        <variable
+            name="click"
+            type="com.example.sougame.ui.fragment.home.SearchFragment.ProxyClick" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.home.SearchFragment">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_margin="12dp"
+            android:onClick="@{()->click.back()}"
+            android:padding="4dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_search"
+            drawable_radius="@{6}"
+            drawable_solidColor="@{@color/color_ef}"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="12dp"
+            android:background="@color/color_ef"
+            android:hint="请输入想玩的游戏名称（如：传奇来了）"
+            android:paddingStart="12dp"
+            android:textColor="@color/color_title"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_back"
+            app:layout_constraintTop_toTopOf="@id/iv_back" />
+
+        <CheckedTextView
+            android:id="@+id/tv_unlimited"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:checked="@{searchTypeBean.isChecked()}"
+            android:onClick="@{()->click.unlimited()}"
+            android:text="不限"
+            android:textColor="@{searchTypeBean.isChecked()?@color/color_yellow:@color/color_7b}"
+            app:layout_constraintStart_toStartOf="@id/iv_back"
+            app:layout_constraintTop_toBottomOf="@id/iv_back" />
+
+        <CheckedTextView
+            android:id="@+id/tv_newest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:checked="@{!searchTypeBean.isChecked()}"
+            android:onClick="@{()->click.newest()}"
+            android:text="最新"
+            android:textColor="@{!searchTypeBean.isChecked()?@color/color_yellow:@color/color_7b}"
+            app:layout_constraintStart_toEndOf="@id/tv_unlimited"
+            app:layout_constraintTop_toTopOf="@id/tv_unlimited" />
+
+        <TextView
+            android:id="@+id/tv_search_select"
+            drawable_radius="@{4}"
+            drawable_solidColor="@{searchTypeBean.isScreen()?@color/color_yellow:@color/color_ef}"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="12dp"
+            android:gravity="center"
+            android:onClick="@{()->click.searchSelect()}"
+            android:text="筛选"
+            android:textColor="@{searchTypeBean.isScreen()?@color/white:@color/color_7b}"
+            app:layout_constraintBottom_toBottomOf="@id/tv_unlimited"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_unlimited" />
+
+        <include
+            android:id="@+id/layout_search_default"
+            layout="@layout/layout_search_default"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_unlimited" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_search_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_unlimited" />
+
+        <include
+            android:id="@+id/layout_select"
+            layout="@layout/dialog_select"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/tv_unlimited"
+            app:layout_constraintTop_toBottomOf="@id/tv_unlimited" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

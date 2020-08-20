@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="click"
+            type="com.example.sougame.ui.fragment.login.LoginFragment.ProxyClick" />
+    </data>
+
+    <FrameLayout
+        android:id="@+id/fl_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#2D999999">
+
+        <ImageView
+            android:id="@+id/iv_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:visibility="gone" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@color/white"
+            android:padding="12dp"
+            tools:context=".ui.fragment.login.LoginFragment">
+
+            <TextView
+                android:id="@+id/tv_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{()->click.close()}"
+                android:text="X"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="搜游记登录"
+                android:textColor="@color/color_title"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_close" />
+
+            <EditText
+                android:id="@+id/et_input_account"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="输入账号"
+                android:text="13049390731"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_text" />
+
+            <EditText
+                android:id="@+id/et_input_password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="输入密码"
+                android:text="123456"
+                app:layout_constraintEnd_toStartOf="@id/tv_get_code"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_input_account" />
+
+            <TextView
+                android:id="@+id/tv_get_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:onClick="@{()->click.getCode()}"
+                android:text="获取验证码"
+                android:textColor="@color/color_yellow"
+                android:visibility="gone"
+                app:layout_constraintBaseline_toBaselineOf="@id/et_input_password"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/et_input_password" />
+
+            <EditText
+                android:id="@+id/et_confirm_password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="确认密码"
+                android:text="a123456"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_input_password" />
+
+            <TextView
+                android:id="@+id/tv_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:onClick="@{()->click.register()}"
+                android:text="注册"
+                android:textColor="@color/color_yellow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_confirm_password" />
+
+            <TextView
+                android:id="@+id/tv_forget_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:onClick="@{()->click.forgetPassword()}"
+                android:text="忘记密码"
+                android:textColor="@color/color_7b"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_confirm_password" />
+
+            <TextView
+                android:id="@+id/tv_login"
+                drawable_radius="@{4}"
+                drawable_solidColor="@{@color/color_yellow}"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/color_yellow"
+                android:gravity="center"
+                android:onClick="@{()->click.login()}"
+                android:text="登录"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_register" />
+
+            <TextView
+                android:id="@+id/tv_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="其他方式登录"
+                android:textColor="@color/color_7b"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_login" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/color_b5"
+                app:layout_constraintBottom_toBottomOf="@id/tv_text1"
+                app:layout_constraintEnd_toStartOf="@id/tv_text1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_text1" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/color_b5"
+                app:layout_constraintBottom_toBottomOf="@id/tv_text1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_text1"
+                app:layout_constraintTop_toTopOf="@id/tv_text1" />
+
+            <TextView
+                android:id="@+id/tv_fast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:drawableTop="@drawable/ic_sw"
+                android:onClick="@{()->click.fastLogin()}"
+                android:text="快速注册"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@id/tv_wx_login"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_text1" />
+
+            <TextView
+                android:id="@+id/tv_wx_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:drawableTop="@drawable/ic_wx"
+                android:onClick="@{()->click.wxLogin()}"
+                android:text="微信登录"
+                app:layout_constraintEnd_toStartOf="@id/tv_qq_login"
+                app:layout_constraintStart_toEndOf="@id/tv_fast"
+                app:layout_constraintTop_toBottomOf="@id/tv_text1" />
+
+            <TextView
+                android:id="@+id/tv_qq_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_qq"
+                android:onClick="@{()->click.qqLogin()}"
+                android:text="QQ登录"
+                app:layout_constraintEnd_toStartOf="@id/tv_phone_login"
+                app:layout_constraintStart_toEndOf="@id/tv_wx_login"
+                app:layout_constraintTop_toTopOf="@id/tv_wx_login" />
+
+            <TextView
+                android:id="@+id/tv_phone_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_phone"
+                android:onClick="@{()->click.phoneLogin()}"
+                android:text="手机登录"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_qq_login"
+                app:layout_constraintTop_toTopOf="@id/tv_qq_login" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+   <androidx.core.widget.NestedScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:paddingStart="12dp"
+           android:paddingEnd="12dp"
+           android:paddingBottom="12dp"
+           android:orientation="vertical">
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="12dp"
+               android:text="一、什么是积分？"
+               android:textColor="@color/color_title"
+               android:textSize="16sp" />
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="8dp"
+               android:text="积分是为了感谢广大搜游记粉丝对搜游记的支持，根据用户体验游戏，游戏中心活跃度等情况推出的一项长期的回馈福利。积分作为搜游记积分商城的一种货币，可用于兑换积分商城里面的各种虚拟奖励，游戏礼包等。" />
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="12dp"
+               android:text="二、如何使用积分？"
+               android:textColor="@color/color_title"
+               android:textSize="16sp" />
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="8dp"
+               android:text="进入积分商城，找到自己喜欢的商品并点击，即可显示商品详情，当达到所需的兑换条件时，点击兑换按钮即可。" />
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="12dp"
+               android:text="三、哪些地方可以使用积分？"
+               android:textColor="@color/color_title"
+               android:textSize="16sp" />
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="8dp"
+               android:text="1、游戏特权\n限量游戏礼包，游戏道具随心兑换\n
+2、商城礼物\n限时限量兑换虚拟商品\n
+3、积分抽奖\n使用积分进行抽奖，各种礼品等你来拿" />
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="12dp"
+               android:text="四、积分如何获取？"
+               android:textColor="@color/color_title"
+               android:textSize="16sp" />
+
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="8dp"
+               android:text="1、每日签到\n进入游戏中心“我”界面或者积分商城界面，点击签到，即可获得对应的积分奖励。\n
+2、游戏充值\n在搜游记平台任意游戏内每充值1元即可获得10积分\n
+3、限时活动\n每隔一段时间都会开放积分获取的限时活动，小伙伴们别错过哦" />
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="12dp"
+               android:text="五、积分的有效期是多久？"
+               android:textColor="@color/color_title"
+               android:textSize="16sp" />
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="8dp"
+               android:text="积分永久有效" />
+       </LinearLayout>
+   </androidx.core.widget.NestedScrollView>
+</layout>
